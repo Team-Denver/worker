@@ -8,8 +8,8 @@
 # docker buildx build --platform "linux/arm64/v8" .
 # FROM --platform=${BUILDPLATFORM} mcr.microsoft.com/dotnet/sdk:7.0 as build
 FROM mcr.microsoft.com/dotnet/sdk:7.0 as build
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
+ARG TARGETPLATFORM=linux/amd64
+ARG BUILDPLATFORM=linux/amd64
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 
 WORKDIR /source
